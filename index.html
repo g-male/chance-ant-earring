@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/style.css">
+        
+<script type="text/javascript">
+	// TOUCH-EVENTS SINGLE-FINGER SWIPE-SENSING JAVASCRIPT
+	// Courtesy of PADILICIOUS.COM and MACOSXAUTOMATION.COM
+	
+	// this script can be used with one or more page elements to perform actions based on them being swiped with a single finger
+
+	var triggerElementID = document.getElementById('bodyBackground'); // this variable is used to identity the triggering element
+	var fingerCount = 0;
+	var startX = 0;
+	var startY = 0;
+	var curX = 0;
+	var curY = 0;
+	var deltaX = 0;
+	var deltaY = 0;
+	var horzDiff = 0;
+	var vertDiff = 0;
+	var minLength = 72; // the shortest distance the user may swipe
+	var swipeLength = 0;
+	var swipeAngle = null;
+	var swipeDirection = null;
+	
+	// The 4 Touch Event Handlers
+	
+	// NOTE: the touchStart handler should also receive the ID of the triggering element
+	// make sure its ID is passed in the event call placed in the element declaration, like:
+	// <div id="picture-frame" ontouchstart="touchStart(event,'picture-frame');"  ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+
+	function touchStart(event, passedName) {
+		// disable the standard ability to select the touched object
+		event.preventDefault();
+		// get the total number of fingers touching the screen
+		fingerCount = event.touches.length;
+		// since we're looking for a swipe (single finger) and not a gesture (multiple fingers),
+		// check that only one finger was used
+		if ( fingerCount == 1 ) {
+			// get the coordinates of the touch
+			startX = event.touches[0].pageX;
+			startY = event.touches[0].pageY;
+			// store the triggering element ID
+			triggerElementID = passedName;
+		} else {
+			// more than one finger touched so cancel
+			touchCancel(event);
+		}
+	}
+
+	function touchMove(event) {
+		event.preventDefault();
+		if ( event.touches.length == 1 ) {
+			curX = event.touches[0].pageX;
+			curY = event.touches[0].pageY;
+		} else {
+			touchCancel(event);
+		}
+	}
+	
+	function touchEnd(event) {
+		event.preventDefault();
+		// check to see if more than one finger was used and that there is an ending coordinate
+		if ( fingerCount == 1 && curX != 0 ) {
+			// use the Distance Formula to determine the length of the swipe
+			swipeLength = Math.round(Math.sqrt(Math.pow(curX - startX,2) + Math.pow(curY - startY,2)));
+			// if the user swiped more than the minimum length, perform the appropriate action
+			if ( swipeLength >= minLength ) {
+				caluculateAngle();
+				determineSwipeDirection();
+				processingRoutine();
+				touchCancel(event); // reset the variables
+			} else {
+				touchCancel(event);
+			}	
+		} else {
+			touchCancel(event);
+		}
+	}
+
+	function touchCancel(event) {
+		// reset the variables back to default values
+		fingerCount = 0;
+		startX = 0;
+		startY = 0;
+		curX = 0;
+		curY = 0;
+		deltaX = 0;
+		deltaY = 0;
+		horzDiff = 0;
+		vertDiff = 0;
+		swipeLength = 0;
+		swipeAngle = null;
+		swipeDirection = null;
+		triggerElementID = document.getElementById(bodyBackground);
+	}
+	
+	function caluculateAngle() {
+		var X = startX-curX;
+		var Y = curY-startY;
+		var Z = Math.round(Math.sqrt(Math.pow(X,2)+Math.pow(Y,2))); //the distance - rounded - in pixels
+		var r = Math.atan2(Y,X); //angle in radians (Cartesian system)
+		swipeAngle = Math.round(r*180/Math.PI); //angle in degrees
+		if ( swipeAngle < 0 ) { swipeAngle =  360 - Math.abs(swipeAngle); }
+	}
+	
+	function determineSwipeDirection() {
+		if ( (swipeAngle <= 45) && (swipeAngle >= 0) ) {
+			swipeDirection = 'left';
+		} else if ( (swipeAngle <= 360) && (swipeAngle >= 315) ) {
+			swipeDirection = 'left';
+		} else if ( (swipeAngle >= 135) && (swipeAngle <= 225) ) {
+			swipeDirection = 'right';
+		} else if ( (swipeAngle > 45) && (swipeAngle < 135) ) {
+			swipeDirection = 'down';
+		} else {
+			swipeDirection = 'up';
+		}
+	}
+	
+	function processingRoutine() {
+		var swipedElement = document.getElementById('bodyBackground');
+		if ( swipeDirection == 'left' ) {
+			// REPLACE WITH YOUR ROUTINES
+			swipedElement.style.background = "url('ants-transparent.gif'), url('mobile-combined-2.jpg')";
+            swipedElement.style.backgroundPosition = '0, center';
+			swipedElement.style.backgroundSize=  'cover, 100% 100%';
+			swipedElement.style.backgroundRepeat = 'no-repeat';
+        } else if ( swipeDirection == 'right' ) {
+			// REPLACE WITH YOUR ROUTINES
+			swipedElement.style.background = "url('ants-transparent.gif'), url('mobile-combined-1.jpg')";
+            swipedElement.style.backgroundPosition = '0, center';
+			swipedElement.style.backgroundSize=  'cover, 100% 100%';
+			swipedElement.style.backgroundRepeat = 'no-repeat';
+		} else if ( swipeDirection == 'up' ) {
+			// REPLACE WITH YOUR ROUTINES
+			swipedElement.style.backgroundColor = 'maroon';
+		} else if ( swipeDirection == 'down' ) {
+			// REPLACE WITH YOUR ROUTINES
+			swipedElement.style.backgroundColor = 'purple';
+		}
+	}
+
+</script>
+    </head>
+    <body>
+       
+       <div class="full-bg" id="bodyBackground" ontouchstart="touchStart(event, 'bodyBackground');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+        
+        <div class="silver-next"> <span class="silver-txt">* 925 Recycled Silver</span> <span class="swipe-txt">SWIPE FOR NEXT VIEW </span> </div>
+       <div class="add-to-cart"> 
+		
+<div id='product-component-1692797419657'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: '539f31-2.myshopify.com',
+      storefrontAccessToken: 'a18f08225d3061eed8341c92fd1beff9',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '8632002806070',
+        node: document.getElementById('product-component-1692797419657'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px",
+        "color": "#000000",
+        ":hover": {
+          "color": "#000000",
+          "background-color": "#a7a7a7"
+        },
+        "background-color": "#b9b9b9",
+        ":focus": {
+          "background-color": "#a7a7a7"
+        },
+        "border-radius": "40px",
+        "padding-left": "11px",
+        "padding-right": "11px"
+      },
+      "quantityInput": {
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px"
+      }
+    },
+    "buttonDestination": "checkout",
+    "contents": {
+      "img": false,
+      "title": false,
+      "price": false
+    },
+    "text": {
+      "button": "Add to Cart"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px",
+        "color": "#000000",
+        ":hover": {
+          "color": "#000000",
+          "background-color": "#a7a7a7"
+        },
+        "background-color": "#b9b9b9",
+        ":focus": {
+          "background-color": "#a7a7a7"
+        },
+        "border-radius": "40px",
+        "padding-left": "11px",
+        "padding-right": "11px"
+      },
+      "quantityInput": {
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px",
+        "color": "#000000",
+        ":hover": {
+          "color": "#000000",
+          "background-color": "#a7a7a7"
+        },
+        "background-color": "#b9b9b9",
+        ":focus": {
+          "background-color": "#a7a7a7"
+        },
+        "border-radius": "40px"
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#b9b9b9",
+        ":hover": {
+          "background-color": "#a7a7a7"
+        },
+        ":focus": {
+          "background-color": "#a7a7a7"
+        }
+      },
+      "count": {
+        "font-size": "13px",
+        "color": "#000000",
+        ":hover": {
+          "color": "#000000"
+        }
+      },
+      "iconPath": {
+        "fill": "#000000"
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+
+	   </div>
+		
+		<div class="footer mobile"><span class="operated-txt"> Website operated by Eric Lachance</span> <span class="email-txt">contact@ericlachants.com</span> </div>
+       
+
+       </div>
+
+
+    </body>
+</html>
