@@ -128,13 +128,13 @@
 		var swipedElement = document.getElementById('bodyBackground');
 		if ( swipeDirection == 'left' ) {
 			// REPLACE WITH YOUR ROUTINES
-			swipedElement.style.background = "url('ants-transparent.gif'), url('new_mobile-combined-2.jpg'), url('new_mobile-combined-1.jpg')";
+			swipedElement.style.background = "url('ants-transparent.gif'), url('/mobile_bg-2.jpg'), url('/mobile_bg-1.jpg')";
             swipedElement.style.backgroundPosition = '0, center';
 			swipedElement.style.backgroundSize=  'cover, 100% 100%, 0 0';
 			swipedElement.style.backgroundRepeat = 'no-repeat';
         } else if ( swipeDirection == 'right' ) {
 			// REPLACE WITH YOUR ROUTINES
-			swipedElement.style.background = "url('ants-transparent.gif'), url('new_mobile-combined-1.jpg'), url('new_mobile-combined-2.jpg')";
+			swipedElement.style.background = "url('ants-transparent.gif'), url('/mobile_bg-1.jpg'), url('/mobile_bg-2.jpg')";
             swipedElement.style.backgroundPosition = '0, center';
 			swipedElement.style.backgroundSize=  'cover, 100% 100%, 0 0';
 			swipedElement.style.backgroundRepeat = 'no-repeat';
@@ -143,196 +143,285 @@
 
 </script>
     </head>
-    <body>
+<body>
        
-       <div class="full-bg" id="bodyBackground" ontouchstart="touchStart(event, 'bodyBackground');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
-        
+<div class="full-bg" id="bodyBackground" ontouchstart="touchStart(event, 'bodyBackground');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+       <div class="desktop-logo"> <img src="/full_ants_logo.png"> </div>
+       <div class="mobile-logo"> <img src="/mobile_ants_logo.png"> </div>
+       
         <div class="silver-next"> <span class="silver-txt">* 925 Recycled Silver</span> <span class="swipe-txt">SWIPE FOR NEXT VIEW </span> </div>
        <div class="add-to-cart"> 
-		
-<div id='product-component-1692797419657'></div>
-<script type="text/javascript">
-/*<![CDATA[*/
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
-  function loadScript() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: '539f31-2.myshopify.com',
-      storefrontAccessToken: 'a18f08225d3061eed8341c92fd1beff9',
-    });
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      ui.createComponent('product', {
-        id: '8632002806070',
-        node: document.getElementById('product-component-1692797419657'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: {
-  "product": {
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "calc(25% - 20px)",
-          "margin-left": "20px",
-          "margin-bottom": "50px"
-        }
-      },
-      "button": {
-        "font-size": "6vw",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px",
-        "color": "#000000",
-        ":hover": {
-          "color": "#000000",
-          "background-color": "#a7a7a7"
+        <div id='product-component-1692973464509'></div>
+        <script type="text/javascript">
+        /*<![CDATA[*/
+        (function () {
+          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+          if (window.ShopifyBuy) {
+            if (window.ShopifyBuy.UI) {
+              ShopifyBuyInit();
+            } else {
+              loadScript();
+            }
+          } else {
+            loadScript();
+          }
+          function loadScript() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = scriptURL;
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+            script.onload = ShopifyBuyInit;
+          }
+          function ShopifyBuyInit() {
+            var client = ShopifyBuy.buildClient({
+              domain: 'ericlachants.myshopify.com',
+              storefrontAccessToken: 'a18f08225d3061eed8341c92fd1beff9',
+            });
+            ShopifyBuy.UI.onReady(client).then(function (ui) {
+              ui.createComponent('product', {
+                id: '8632002806070',
+                node: document.getElementById('product-component-1692973464509'),
+                moneyFormat: '%24%7B%7Bamount%7D%7D',
+                options: {
+          "product": {
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "calc(25% - 20px)",
+                  "margin-left": "20px",
+                  "margin-bottom": "50px"
+                }
+              },
+              "button": {
+                "font-size": "13px",
+                "padding-top": "14.5px",
+                "padding-bottom": "14.5px",
+                "color": "#000000",
+                ":hover": {
+                  "color": "#000000",
+                  "background-color": "#a7a7a7"
+                },
+                "background-color": "#b9b9b9",
+                ":focus": {
+                  "background-color": "#a7a7a7"
+                },
+                "border-radius": "40px",
+                "padding-left": "11px",
+                "padding-right": "11px"
+              },
+              "quantityInput": {
+                "font-size": "13px",
+                "padding-top": "14.5px",
+                "padding-bottom": "14.5px"
+              }
+            },
+            "contents": {
+              "img": false,
+              "title": false,
+              "price": false
+            },
+            "text": {
+              "button": "Pre-Order"
+            }
+          },
+          "productSet": {
+            "styles": {
+              "products": {
+                "@media (min-width: 601px)": {
+                  "margin-left": "-20px"
+                }
+              }
+            }
+          },
+          "modalProduct": {
+            "contents": {
+              "img": false,
+              "imgWithCarousel": true,
+              "button": false,
+              "buttonWithQuantity": true
+            },
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px"
+                }
+              },
+              "button": {
+                "font-size": "13px",
+                "padding-top": "14.5px",
+                "padding-bottom": "14.5px",
+                "color": "#000000",
+                ":hover": {
+                  "color": "#000000",
+                  "background-color": "#a7a7a7"
+                },
+                "background-color": "#b9b9b9",
+                ":focus": {
+                  "background-color": "#a7a7a7"
+                },
+                "border-radius": "40px",
+              },
+              "quantityInput": {
+                "font-size": "13px",
+                "padding-top": "14.5px",
+                "padding-bottom": "14.5px"
+              }
+            },
+            "text": {
+              "button": "Add to cart"
+            }
+          },
+          "option": {},
+          "cart": {
+            "styles": {
+              "button": {
+                "font-size": "13px",
+                "padding-top": "14.5px",
+                "padding-bottom": "14.5px",
+                "color": "#000000",
+                ":hover": {
+                  "color": "#000000",
+                  "background-color": "#a7a7a7"
+                },
+                "background-color": "#b9b9b9",
+                ":focus": {
+                  "background-color": "#a7a7a7"
+                },
+                "border-radius": "40px"
+              },
+              "title": {
+                "color": "#000000"
+              },
+              "header": {
+                "color": "#000000"
+              },
+              "lineItems": {
+                "color": "#000000"
+              },
+              "subtotalText": {
+                "color": "#000000"
+              },
+              "subtotal": {
+                "color": "#000000"
+              },
+              "notice": {
+                "color": "#000000"
+              },
+              "currency": {
+                "color": "#000000"
+              },
+              "close": {
+                "color": "#000000",
+                ":hover": {
+                  "color": "#000000"
+                }
+              },
+              "empty": {
+                "color": "#000000"
+              },
+              "noteDescription": {
+                "color": "#000000"
+              },
+              "discountText": {
+                "color": "#000000"
+              },
+              "discountIcon": {
+                "fill": "#000000"
+              },
+              "discountAmount": {
+                "color": "#000000"
+              },
+              "cart": {
+                "background-color": "#f1f1f1"
+              },
+              "footer": {
+                "background-color": "#f1f1f1"
+              }
+            },
+            "text": {
+              "title": "",
+              "total": "Subtotal",
+              "notice": "",
+              "button": "Checkout",
+              "noteDescription": "will ship in 1 week"
+            },
+            "contents": {
+              "note": true
+            }
+          },
+          "toggle": {
+            "styles": {
+              "toggle": {
+                "background-color": "#b9b9b9",
+                ":hover": {
+                  "background-color": "#a7a7a7"
+                },
+                ":focus": {
+                  "background-color": "#a7a7a7"
+                }
+              },
+              "count": {
+                "font-size": "13px",
+                "color": "#000000",
+                ":hover": {
+                  "color": "#000000"
+                }
+              },
+              "iconPath": {
+                "fill": "#000000"
+              }
+            }
+          },
+          "lineItem": {
+            "styles": {
+              "variantTitle": {
+                "color": "#000000"
+              },
+              "title": {
+                "color": "#000000"
+              },
+              "price": {
+                "color": "#000000"
+              },
+              "fullPrice": {
+                "color": "#000000"
+              },
+              "discount": {
+                "color": "#000000"
+              },
+              "discountIcon": {
+                "fill": "#000000"
+              },
+              "quantity": {
+                "color": "#000000"
+              },
+              "quantityIncrement": {
+                "color": "#000000",
+                "border-color": "#000000"
+              },
+              "quantityDecrement": {
+                "color": "#000000",
+                "border-color": "#000000"
+              },
+              "quantityInput": {
+                "color": "#000000",
+                "border-color": "#000000"
+              }
+            }
+          }
         },
-        "background-color": "#b9b9b9",
-        ":focus": {
-          "background-color": "#a7a7a7"
-        },
-        "border-radius": "40px",
-        "padding-left": "21px",
-        "padding-right": "21px"
-      },
-      "quantityInput": {
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px"
-      }
-    },
-    "buttonDestination": "checkout",
-    "contents": {
-      "img": false,
-      "title": false,
-      "price": false
-    },
-    "text": {
-      "button": "BUY"
-    }
-  },
-  "productSet": {
-    "styles": {
-      "products": {
-        "@media (min-width: 601px)": {
-          "margin-left": "-20px"
-        }
-      }
-    }
-  },
-  "modalProduct": {
-    "contents": {
-      "img": false,
-      "imgWithCarousel": true,
-      "button": false,
-      "buttonWithQuantity": true
-    },
-    "styles": {
-      "product": {
-        "@media (min-width: 601px)": {
-          "max-width": "100%",
-          "margin-left": "0px",
-          "margin-bottom": "0px"
-        }
-      },
-      "button": {
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px",
-        "color": "#000000",
-        ":hover": {
-          "color": "#000000",
-          "background-color": "#a7a7a7"
-        },
-        "background-color": "#b9b9b9",
-        ":focus": {
-          "background-color": "#a7a7a7"
-        },
-        "border-radius": "40px",
-        "padding-left": "11px",
-        "padding-right": "11px"
-      },
-      "quantityInput": {
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px"
-      }
-    },
-    "text": {
-      "button": "Add to cart"
-    }
-  },
-  "option": {},
-  "cart": {
-    "styles": {
-      "button": {
-        "font-size": "13px",
-        "padding-top": "14.5px",
-        "padding-bottom": "14.5px",
-        "color": "#000000",
-        ":hover": {
-          "color": "#000000",
-          "background-color": "#a7a7a7"
-        },
-        "background-color": "#b9b9b9",
-        ":focus": {
-          "background-color": "#a7a7a7"
-        },
-        "border-radius": "40px"
-      }
-    },
-    "text": {
-      "total": "Subtotal",
-      "button": "Checkout"
-    }
-  },
-  "toggle": {
-    "styles": {
-      "toggle": {
-        "background-color": "#b9b9b9",
-        ":hover": {
-          "background-color": "#a7a7a7"
-        },
-        ":focus": {
-          "background-color": "#a7a7a7"
-        }
-      },
-      "count": {
-        "font-size": "13px",
-        "color": "#000000",
-        ":hover": {
-          "color": "#000000"
-        }
-      },
-      "iconPath": {
-        "fill": "#000000"
-      }
-    }
-  }
-},
-      });
-    });
-  }
-})();
-/*]]>*/
-</script>
+              });
+            });
+          }
+        })();
+        /*]]>*/
+        </script>
 
 	   </div>
 		
-		<div class="footer mobile"><span class="operated-txt"> Website operated by Eric Lachance</span> <span class="email-txt">contact@ericlachANTS.com</span> </div>
+		<div class="footer mobile"><span class="operated-txt"> Website operated by Eric Lachance</span> <span class="email-txt"><a href="mailto:contact@ericlachANTS.com"> contact@ericlachANTS.com</a></span> </div>
        
 
        </div>
