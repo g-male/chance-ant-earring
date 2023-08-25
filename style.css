@@ -121,9 +121,11 @@ margin-bottom: 3vw;
   position: fixed;
   top: 30%;
   left: 5%;
-  font-size: 3.7vw;
+  font-size: 3vw;
   font-weight: 700;
 display: block;
+
+font-family: helvetica-light;
 }
 .swipe-txt{
   font-size: 3vw;
