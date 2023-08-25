@@ -18,7 +18,7 @@ html, body {
 .full-bg{
     width: 100%;
     height: 100%;
-    background: url('ants_overlay_desktop.gif'),  url('Ant_render_desktop.jpg');
+    background: url('ants_overlay_desktop.gif'),  url('desktop_bg.jpg');
   background-repeat: no-repeat;
  background-size: cover, cover;
  background-position: center, center;
@@ -115,6 +115,7 @@ margin-bottom: 3vw;
 .email-txt{
  padding-right: 3vw;
   float: right;
+  display: block;
 }
 .silver-txt{
   position: fixed;
